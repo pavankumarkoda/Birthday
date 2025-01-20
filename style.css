@@ -98,22 +98,14 @@ body {
   background-color: rgb(38, 38, 38);
 }
 @media screen and (max-width: 600px) {
-  .Picture{
-    width: 400px;
-    height: 400px;
-  }
-  .Picture-note {
-    width : 400px;
-  }
+  .Picture-img {
+    width: 100%; /* Use full width for smaller screens */
+    height: auto; 
 }
 
 @media screen and (max-width: 400px) {
 
-  .Picture{
-    width: 500px;
-    height: 500px;
-  }
-    .Picture-note {
-    width : 500px;
-    }
+.Picture-img {
+    width: 100%; /* Use full width for smaller screens */
+    height: auto; 
 }
