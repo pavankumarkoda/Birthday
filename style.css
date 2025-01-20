@@ -97,3 +97,16 @@ body {
   overflow: hidden;
   background-color: rgb(38, 38, 38);
 }
+@media screen and (max-width: 600px) {
+  .Picture-img {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .Picture-img {
+    width: 500px;
+    height: 500px;
+  }
+}
