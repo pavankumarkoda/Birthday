@@ -102,11 +102,18 @@ body {
     width: 400px;
     height: 400px;
   }
+  .Picture-note {
+    width : 400px;
+  }
 }
 
 @media screen and (max-width: 400px) {
+
   .Picture-img {
     width: 500px;
     height: 500px;
   }
+    .Picture-note {
+    width : 500px;
+    }
 }
