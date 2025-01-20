@@ -98,14 +98,16 @@ body {
   background-color: rgb(38, 38, 38);
 }
 @media screen and (max-width: 600px) {
-  .Picture-img {
-    width: 100%; /* Use full width for smaller screens */
-    height: auto; 
-}
+      body {
+        transform: scale(1.5);  /* Scale the body content to 150% */
+        transform-origin: top left; /* Ensure the zoom starts from the top left corner */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+      }
 
 @media screen and (max-width: 400px) {
 
-.Picture-img {
-    width: 100%; /* Use full width for smaller screens */
-    height: auto; 
-}
+body {
+        transform: scale(1.5);  /* Scale the body content to 150% */
+        transform-origin: top left; /* Ensure the zoom starts from the top left corner */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+      }
