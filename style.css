@@ -111,3 +111,20 @@ body {
         transform-origin: top left; /* Ensure the zoom starts from the top left corner */
         overflow-x: hidden; /* Prevent horizontal scrolling */
       }
+/* Snowflakes styling */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: white;
+            font-size: 24px;
+            user-select: none;
+            pointer-events: none;
+            z-index: 9999; /* Ensure snowflakes are above other content */
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh); /* Falls to the bottom of the screen */
+            }
+        }
