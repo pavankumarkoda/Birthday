@@ -21,7 +21,28 @@ function updateElementPosition(element, event) {
   element.style.top = elementY + "px";
   element.style.left = elementX + "px";
 }
+function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.classList.add('snowflake');
 
+            const startPosX = Math.random() * window.innerWidth; // Random horizontal position
+            const size = Math.random() * 10 + 10; // Random size for variety
+            const animationDuration = Math.random() * 3 + 5; // Random fall speed
+
+            snowflake.style.left = `${startPosX}px`;
+            snowflake.style.fontSize = `${size}px`;
+            snowflake.style.animationDuration = `${animationDuration}s`;
+
+            document.body.appendChild(snowflake);
+
+            // Clean up snowflakes once they reach the bottom
+            snowflake.addEventListener('animationend', () => {
+                snowflake.remove();
+            });
+        }
+
+        setInterval(createSnowflake, 100);
 function startDrag(element, event) {
 
   const updateFunction = (event) => updateElementPosition(element, event);
