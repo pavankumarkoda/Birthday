@@ -52,25 +52,30 @@ pictures.forEach(picture => {
   picture.addEventListener("mousedown", startFunction);
   picture.addEventListener("touchstart", startFunction);
 });
+
+
+
+
+
 function createSnowflake() {
     const snowflake = document.createElement('div');
     snowflake.textContent = '❄'; // Snowflake symbol
     snowflake.classList.add('snowflake');
 
-    // Random start position, vertical positioning is from above the viewport
-    const startPosX = Math.random() * window.innerWidth; // Random horizontal position
-    const startPosY = -Math.random() * 100; // Random start from above the screen
-    
-    const size = Math.random() * 10 + 10; // Random size for variety
-    const duration = Math.random() * 5 + 5; // Random fall duration to vary speeds
-    const delay = Math.random() * 5; // Random delay to stagger the start of the fall
+    // Random horizontal position
+    const startPosX = Math.random() * window.innerWidth; 
+    // Random size for variety
+    const size = Math.random() * 10 + 10; 
+    // Random fall speed/duration
+    const duration = Math.random() * 5 + 5; 
+    // Random delay to stagger animation start
+    const delay = Math.random() * 5; 
 
     // Apply styles directly to the snowflake
-    snowflake.style.left = `${startPosX}px`; // Random horizontal position
-    snowflake.style.top = `${startPosY}px`; // Start above the screen
-    snowflake.style.fontSize = `${size}px`;  // Random font size for variety
-    snowflake.style.animationDuration = `${duration}s`; // Random falling speed
-    snowflake.style.animationDelay = `${delay}s`; // Delay to stagger animation start
+    snowflake.style.left = `${startPosX}px`;  // Horizontal position
+    snowflake.style.fontSize = `${size}px`;  // Random size
+    snowflake.style.animationDuration = `${duration}s`; // Falling speed
+    snowflake.style.animationDelay = `${delay}s`;  // Staggered start
 
     // Add snowflake to body
     document.body.appendChild(snowflake);
