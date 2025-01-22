@@ -114,21 +114,26 @@ body {
     
       }
 
-
+/* Snowflake style */
 .snowflake {
   position: absolute;
   color: white;
-  pointer-events: none; /* Ensures snowflakes don't interfere with other elements */
-  user-select: none; /* Disables selection */
-  font-family: sans-serif; /* Ensures proper display of the snowflake symbol */
-  z-index: 9999; /* Ensures snowflakes are on top */
+  font-size: 20px; /* Default size, will be overridden by JavaScript */
+  pointer-events: none; /* Prevent interaction with snowflakes */
+  user-select: none; /* Prevent text selection */
+  z-index: 9999; /* Ensure snowflakes are above other elements */
   animation: fall linear infinite;
 }
 
 @keyframes fall {
   0% {
-    transform: translateY(-100px); /* Start above the screen */
+    transform: translateY(-50px); /* Start above the screen */
   }
+  100% {
+    transform: translateY(calc(100vh + 50px)); /* Fall to the bottom of the screen */
+  }
+}
+
   100% {
     transform: translateY(calc(100vh + 50px)); /* Fall to the bottom of the screen */
   }
