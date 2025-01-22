@@ -139,3 +139,29 @@ body {
   }
 }
 
+
+/* Snowflake style */
+.snowflake {
+  margin-top: -20px;
+  position: absolute;
+  color: rgb(105, 200, 255);
+  font-size: 20px; /* Default size, will be overridden by JavaScript */
+  pointer-events: none; /* Prevent interaction with snowflakes */
+  user-select: none; /* Prevent text selection */
+  z-index: 9999; /* Ensure snowflakes are above other elements */
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-50px); /* Start above the screen */
+  }
+  100% {
+    transform: translateY(calc(100vh + 50px)); /* Fall to the bottom of the screen */
+  }
+}
+    transform: translateY(calc(100vh + 50px)); /* Fall to the bottom of the screen */
+  }
+}
+
+
