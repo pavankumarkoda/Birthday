@@ -111,22 +111,26 @@ body {
         transform-origin: top left; /* Ensure the zoom starts from the top left corner */
         overflow-x: hidden; /* Prevent horizontal scrolling */
   position: absolute;
-    top: -10px; /* Start slightly above the screen */
-    color: white; /* Snowflakes are white */
-    pointer-events: none; /* Make sure snowflakes do not interfere with other elements */
-    user-select: none; /* Prevent selecting snowflakes */
-    animation-name: fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    
       }
 
 
+.snowflake {
+  position: absolute;
+  color: white;
+  pointer-events: none; /* Ensures snowflakes don't interfere with other elements */
+  user-select: none; /* Disables selection */
+  font-family: sans-serif; /* Ensures proper display of the snowflake symbol */
+  z-index: 9999; /* Ensures snowflakes are on top */
+  animation: fall linear infinite;
+}
 
 @keyframes fall {
-    0% {
-        transform: translateY(0) translateX(0);
-    }
-    100% {
-        transform: translateY(100vh) translateX(0); /* Snowflakes fall straight down */
-    }
+  0% {
+    transform: translateY(-100px); /* Start above the screen */
+  }
+  100% {
+    transform: translateY(calc(100vh + 50px)); /* Fall to the bottom of the screen */
+  }
 }
+
