@@ -58,20 +58,24 @@ function createSnowflake() {
     snowflake.textContent = '❄'; // Snowflake symbol
     snowflake.classList.add('snowflake');
 
+    // Random start position and size
     const startPosX = Math.random() * window.innerWidth; // Random horizontal position
     const size = Math.random() * 10 + 10; // Random size for variety
-    const animationDuration = Math.random() * 3 + 5; // Random fall speed
+    const duration = Math.random() * 5 + 5; // Random fall duration to vary speeds
 
-    snowflake.style.left = `${startPosX}px`; // Random position horizontally
-    snowflake.style.fontSize = `${size}px`; // Random size for snowflake
-    snowflake.style.animationDuration = `${animationDuration}s`; // Random animation speed
+    // Apply styles directly to the snowflake
+    snowflake.style.left = `${startPosX}px`; // Horizontal position
+    snowflake.style.fontSize = `${size}px`;  // Random font size for variation
+    snowflake.style.animationDuration = `${duration}s`; // Random falling speed
 
+    // Add snowflake to body
     document.body.appendChild(snowflake);
 
-    // Clean up snowflakes once they reach the bottom
+    // Remove snowflake when it has finished falling
     snowflake.addEventListener('animationend', () => {
         snowflake.remove();
     });
 }
 
-setInterval(createSnowflake, 100);
+// Create snowflakes at regular intervals
+setInterval(createSnowflake, 150);
