@@ -110,21 +110,23 @@ body {
         transform: scale(1.5);  /* Scale the body content to 150% */
         transform-origin: top left; /* Ensure the zoom starts from the top left corner */
         overflow-x: hidden; /* Prevent horizontal scrolling */
-      }
-/* Snowflakes styling */
-.snowflake {
-    position: absolute;
-    top: -10px; /* Start position above the screen */
+  position: absolute;
+    top: -10px; /* Start slightly above the screen */
+    color: white; /* Snowflakes are white */
+    pointer-events: none; /* Make sure snowflakes do not interfere with other elements */
+    user-select: none; /* Prevent selecting snowflakes */
     animation-name: fall;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-}
+      }
+
+
 
 @keyframes fall {
     0% {
-        transform: translateX(0) translateY(0);
+        transform: translateY(0) translateX(0);
     }
     100% {
-        transform: translateX(calc(100vw - 50px)) translateY(100vh); /* Falls to the bottom, with some random horizontal movement */
+        transform: translateY(100vh) translateX(0); /* Snowflakes fall straight down */
     }
 }
