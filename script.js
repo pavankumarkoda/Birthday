@@ -56,35 +56,7 @@ pictures.forEach(picture => {
 
 
 
-function createSnowflake() {
-  const snowflake = document.createElement('div');
-  snowflake.textContent = '❄'; // Snowflake symbol
-  snowflake.classList.add('snowflake');
 
-  // Random horizontal position
-  const startPosX = Math.random() * window.innerWidth; 
-  // Random size for variety
-  const size = Math.random() * 10 + 10; 
-  // Random fall speed/duration
-  const duration = Math.random() * 5 + 5; 
-  // Random delay to stagger animation start
-  const delay = Math.random() * 5; 
 
-  // Apply styles directly to the snowflake
-  snowflake.style.left = `${startPosX}px`;  // Horizontal position
-  snowflake.style.fontSize = `${size}px`;  // Random size
-  snowflake.style.animationDuration = `${duration}s`; // Falling speed
-  snowflake.style.animationDelay = `${delay}s`;  // Staggered start
 
-  // Add snowflake to body
-  document.body.appendChild(snowflake);
-
-  // Remove snowflake when it has finished falling
-  snowflake.addEventListener('animationend', () => {
-    snowflake.remove();
-  });
-}
-
-// Create snowflakes at regular intervals
-setInterval(createSnowflake, 150);
 
